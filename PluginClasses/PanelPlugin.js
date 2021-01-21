@@ -1,4 +1,4 @@
-import AbstractPlugin from './AbstractPlugin';
+import {AbstractPlugin} from './AbstractPlugin';
 
 export class PanelPlugin extends AbstractPlugin {
 	/**

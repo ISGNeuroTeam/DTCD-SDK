@@ -27,6 +27,6 @@ export class StyleSystemAdapter extends BaseAdapter {
 	 * @param {string} startPrefix Prefix for CSS variable.
 	 */
 	setVariablesToElement(element, obj, startPrefix = '-') {
-		this.instance.setDesignVariables(element, obj, startPrefix);
+		this.instance.setVariablesToElement(element, obj, startPrefix);
 	}
 }

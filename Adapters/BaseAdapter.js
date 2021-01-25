@@ -13,6 +13,6 @@ export class BaseAdapter {
 	 * @returns {Object} Instance of system
 	 */
 	getInstance(instanceName) {
-		return this.systemGUID.getInstanceByName[instanceName];
+		return this.systemGUID.getInstanceByName(instanceName);
 	}
 }

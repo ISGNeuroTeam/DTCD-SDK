@@ -6,7 +6,7 @@ export class PluginInstallerAdapter extends BaseAdapter {
 	 */
 	constructor() {
 		super();
-		this.instance = this.getInstance('PluginInstaller');
+		this.instance = this.getSystem('PluginInstaller');
 		/**
 		 * Array of exists plugins in the application
 		 * @property {Array}

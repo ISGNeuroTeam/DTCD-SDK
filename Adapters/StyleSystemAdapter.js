@@ -7,7 +7,7 @@ export class StyleSystemAdapter extends BaseAdapter {
 	 */
 	constructor() {
 		super();
-		this.instance = this.getInstance('StyleSystem');
+		this.instance = this.getSystem('StyleSystem');
 	}
 
 	/**

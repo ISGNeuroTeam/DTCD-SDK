@@ -6,9 +6,17 @@ export class EventSystemAdapter extends BaseAdapter {
 	 */
 	constructor() {
 		super();
-		this.instance = this.getInstance('EventSystem');
+		this.instance = this.getSystem('EventSystem');
 	}
 
+	/**
+	 * Adding CustomEvent object to events array
+	 * @param {Object} customEvent
+	 */
+	registerEvent(customEvent) {
+		this.instance.registerEvent(customEvent);
+		return true;
+	}
 	/**
 	 * Creates and publishes a new event to EventSystem
 	 * @param {Number} guid identifier of plugin instance

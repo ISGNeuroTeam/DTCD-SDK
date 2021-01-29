@@ -4,15 +4,14 @@ export class BaseAdapter {
 	 * @constructor
 	 */
 	constructor() {
-		// Next-line is temporary decision
-		this.systemGUID = document._DataCAD.systemGUID;
+		this.app = Application;
 	}
 	/**
 	 * This method returns an instance of the required system
-	 * @param {String} instanceName Name of getting system
+	 * @param {String} name Name of getting system
 	 * @returns {Object} Instance of system
 	 */
-	getInstance(instanceName) {
-		return this.systemGUID.getInstanceByName(instanceName);
+	getSystem(name) {
+		return this.app.getSystem(name);
 	}
 }

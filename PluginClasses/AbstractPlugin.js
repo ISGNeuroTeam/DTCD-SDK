@@ -23,6 +23,7 @@ export class AbstractPlugin {
 
 	/**
 	 * Getting module from dependencies
+	 * @method
 	 * @param {String} name
 	 * @returns {Object[]}
 	 */
@@ -32,6 +33,7 @@ export class AbstractPlugin {
 
 	/**
 	 * Getting all extensions for plugin by name
+	 * @method
 	 * @param {String} name
 	 * @return {Object[]}
 	 */
@@ -41,6 +43,7 @@ export class AbstractPlugin {
 
 	/**
 	 * Getting of all awailable panels
+	 * @method
 	 * @return {Object[]}
 	 */
 	getPanels() {
@@ -49,6 +52,7 @@ export class AbstractPlugin {
 
 	/**
 	 * Getting system by name
+	 * @method
 	 * @param {String} name
 	 * @return {Object}
 	 */
@@ -58,6 +62,7 @@ export class AbstractPlugin {
 
 	/**
 	 * Installing plugin by name
+	 * @method
 	 * @param {String} name
 	 */
 	installPlugin(name, ...args) {

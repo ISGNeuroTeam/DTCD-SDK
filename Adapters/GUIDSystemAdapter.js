@@ -23,45 +23,69 @@ export class GUIDSystemAdapter extends BaseAdapter {
 	 * @method
 	 * @param {Object} instance
 	 * @param {String} guid
-	 * @return {void}
+	 * @return {Boolean}
 	 */
 	setGUID(instance, guid) {
 		return this.instance.setGUID(instance, guid);
 	}
 
 	/**
-	 * Get GUID of first instance with name in params
+	 * Getting GUID by instance
 	 * @method
-	 * @param {String} name
+	 * @param {String} instance
+	 * @returns {String}
 	 */
-	getGUIDByName(name) {
-		return this.instance.getGUIDByName(name);
-	}
-
-	/**
-	 * Getting instance by guid
-	 * @method
-	 * @param {String} guid
-	 */
-	getInstance(guid) {
-		this.instance.getInstance(guid);
-	}
-
-	/**
-	 * Get first instance of plugin with name in params
-	 * @method
-	 * @param {String} name
-	 */
-	getInstanceByName(name) {
-		this.instance.getInstanceByName(name);
+	getGUID(instance) {
+		return this.instance.getGUID(instance);
 	}
 
 	/**
 	 * Delete record about instance from GUIDSystem
 	 * @method
 	 * @param {String} guid
+	 * @return {Boolean}
 	 */
 	removeGUID(guid) {
-		this.instance.removeGUID(guid);
+		return this.instance.removeGUID(guid);
+	}
+
+	/**
+	 * Getting GUID's/GUID of instances with name in params
+	 * @method
+	 * @param {String} name
+	 * @return {String[]|String|Boolean}
+	 */
+	getGUIDByName(name) {
+		return this.instance.getGUIDByName(name);
+	}
+
+	/**
+	 * Remove instance from GUIDSystem
+	 * @method
+	 * @param {Object} instance
+	 * @return {Boolean}
+	 */
+	removeInstance(instance) {
+		return this.instance.removeInstance(instance);
+	}
+
+	/**
+	 * Getting instance by guid
+	 * @method
+	 * @param {String} guid
+	 * @returns {Object}
+	 */
+	getInstance(guid) {
+		return this.instance.getInstance(guid);
+	}
+
+	/**
+	 * Get first instance of plugin with name in params
+	 * @method
+	 * @param {String} name
+	 * @return {String[]|String|Boolean}
+	 */
+	getInstanceByName(name) {
+		return this.instance.getInstanceByName(name);
 	}
 }

@@ -42,7 +42,7 @@ export class AbstractPlugin {
 	}
 
 	/**
-	 * Getting of all awailable panels
+	 * Getting list of all awailable panels
 	 * @method
 	 * @return {Object[]}
 	 */
@@ -67,5 +67,25 @@ export class AbstractPlugin {
 	 */
 	installPlugin(name, ...args) {
 		return Application.installPlugin(name, ...args);
+	}
+
+	/**
+	 * Uninstall plugin from Application by instance
+	 * @method
+	 * @param {Object} instance
+	 * @returns {Boolean}
+	 */
+	uninstallPluginByInstance(instance) {
+		return Application.uninstallPluginByInstance(instance);
+	}
+
+	/**
+	 * Uninstall plugin from Application by unique identifier
+	 * @method
+	 * @param {String} guid Unique identifier of the instance to be uninstalled
+	 * @returns {Boolean}
+	 */
+	uninstallPluginByGUID(guid) {
+		return Application.uninstallPluginByGUID(guid);
 	}
 }

@@ -20,6 +20,27 @@ export class StyleSystemAdapter extends BaseAdapter {
 	}
 
 	/**
+	 * Setting new current theme
+	 * @method
+	 * @param {String} name name of new theme
+	 * @returns {Boolean}
+	 */
+	setTheme(name) {
+		this.instance.setTheme(name);
+		return true;
+	}
+
+	/**
+	 * Getting list of all available themes
+	 * @async
+	 * @method
+	 * @returns {Object[]}
+	 */
+	async getThemes() {
+		return await this.instance.getThemes();
+	}
+
+	/**
 	 * Set CSS variable for DOM element
 	 * @method
 	 * @param {string} element DOM element.

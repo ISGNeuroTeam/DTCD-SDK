@@ -88,4 +88,15 @@ export class AbstractPlugin {
 	uninstallPluginByGUID(guid) {
 		return Application.uninstallPluginByGUID(guid);
 	}
+
+	/**
+	 * Getting instance by guid
+	 * @method
+	 * @param {String} guid
+	 * @returns {Object}
+	 */
+	getInstance(guid) {
+		this.instance.getInstance(guid);
+		return this.instance.getInstance(guid);
+	}
 }

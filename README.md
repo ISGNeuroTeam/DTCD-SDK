@@ -26,18 +26,6 @@ There are 6 adapters for the following systems:
 - StorageSystem
 - StyleSystem
 
-## Running the tests
-
-```
-make test
-```
-
-## Deployment
-
-```
-In development
-```
-
 
 ## Versioning
 

@@ -6,9 +6,17 @@ export class EventSystemAdapter extends BaseAdapter {
 	 */
 	constructor() {
 		super();
-		this.instance = this.getInstance('EventSystem');
+		this.instance = this.getSystem('EventSystem');
 	}
 
+	/**
+	 * Adding CustomEvent object to events array
+	 * @param {Object} customEvent
+	 */
+	registerEvent(customEvent) {
+		this.instance.registerEvent(customEvent);
+		return true;
+	}
 	/**
 	 * Creates and publishes a new event to EventSystem
 	 * @param {Number} guid identifier of plugin instance
@@ -91,11 +99,20 @@ export class EventSystemAdapter extends BaseAdapter {
 	}
 
 	/**
+	 * Subscribes to all events with the given event name and sets the given callback
+	 * @param {String} eventName
+	 * @param {Function} callback
+	 */
+	subscribeEventNameByCallback(eventName, callback) {
+		this.instance.subscribeEventNameByCallback(eventName, callback);
+	}
+
+	/**
 	 * Returns instace of action stored in EventSystem from the given actionID
 	 * @param {String} actionID actionID of the action
 	 * @returns {CustomAction} instance of CustomAction stored in EventSystem
 	 */
-	findAction(actionID) {
+	findActionById(actionID) {
 		return this.instance.findAction(actionID);
 	}
 

@@ -1,0 +1,19 @@
+{
+  "name": "sdk",
+  "version": "0.1.0",
+  "description": "SDK is a collection absctract classes and adapters needed for creating new plugin for WebGUI.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISGNeuroTeam/DTCD-SDK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "OT.Platform",
+  "bugs": {
+    "url": "https://github.com/ISGNeuroTeam/DTCD-SDK/issues"
+  },
+  "homepage": "https://github.com/ISGNeuroTeam/DTCD-SDK#readme"
+}

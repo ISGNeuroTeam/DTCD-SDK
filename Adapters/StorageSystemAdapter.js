@@ -7,7 +7,7 @@ export class StorageSystemAdapter extends BaseAdapter {
 	 */
 	constructor() {
 		super();
-		this.instance = this.getInstance('StorageSystem');
+		this.instance = this.getSystem('StorageSystem');
 	}
 
 	/**

@@ -9,7 +9,7 @@ endef
 
 PROJECT_NAME = WebGUI-SDK
 
-GENERATE_VERSION = $(shell jq .version ./package.json )
+GENERATE_VERSION = $(shell jq .version ./SDK/package.json )
 GENERATE_BRANCH = $(shell git name-rev $$(git rev-parse HEAD) | cut -d\  -f2 | sed -re 's/^(remotes\/)?origin\///' | tr '/' '_')
 
 SET_VERSION = $(eval VERSION=$(GENERATE_VERSION))
@@ -30,9 +30,9 @@ build: $(COMPONENTS)
 	echo Building started...
 	$(SET_VERSION)
 	mkdir ./build
-	cp -r ./Adapters ./build
-	cp -r ./PluginClasses ./build
-	cp ./index.js ./build/
+	cp -r ./SDK/Adapters ./build
+	cp -r ./SDK/PluginClasses ./build
+	cp ./SDK/index.js ./build/
 	cp README.md ./build/
 	cp CHANGELOG.md ./build/
 	cp LICENSE.md ./build/
@@ -45,9 +45,6 @@ clean:
 	rm -rf ./build/
 	rm -rf *.tar.gz
 	rm -rf ./*-lock.*
-	rm -rf ./node_modules
-	rm -rf ./$(PROJECT_NAME)-*.tar.gz
-	 
 	echo Cleaning completed.
 	# required section
 
@@ -59,4 +56,9 @@ pack: build
 	echo Creating \"$(PACK_NAME)\" archive...
 	cd ./build/ && tar czf ../$(PACK_NAME) .
 	echo Archive \"$(PACK_NAME)\" created successfully.
+	# required section
+
+test:
+	# required section
+	echo Nothing to test
 	# required section

@@ -9,10 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.1] - 2021-02-10
 
+### Added
+- [.gitignore](.gitignore) file
+
+### Changed
+- [Makefile](Makefile) to current project structure
+
 ### Fixed
 - [LICENSE.md](LICENSE.md) file text content
 - [Jenkinsfile](Jenkinsfile) text content
+- moved source code to SDK directory
+- moved package.json to SDK directory
 
-## [0.1.0]
+## [0.1.0] - 2021-02-09
 
+### Added
 - Init of base abstract classes and adapters

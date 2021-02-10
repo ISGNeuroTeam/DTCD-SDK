@@ -7,9 +7,9 @@ Required section:
 Addition section:
 endef
 
-PROJECT_NAME = WebGUI-SDK
+PROJECT_NAME = DTCD-SDK
 
-GENERATE_VERSION = $(shell jq .version ./SDK/package.json )
+GENERATE_VERSION = $(shell jq .version ./$(PROJECT_NAME)/package.json )
 GENERATE_BRANCH = $(shell git name-rev $$(git rev-parse HEAD) | cut -d\  -f2 | sed -re 's/^(remotes\/)?origin\///' | tr '/' '_')
 
 SET_VERSION = $(eval VERSION=$(GENERATE_VERSION))
@@ -29,10 +29,10 @@ build: $(COMPONENTS)
 	# required section
 	echo Building started...
 	$(SET_VERSION)
-	mkdir ./build
-	cp -r ./SDK/Adapters ./build
-	cp -r ./SDK/PluginClasses ./build
-	cp ./SDK/index.js ./build/
+	mkdir ./build && mkdir ./build/$(PROJECT_NAME)
+	cp -r ./$(PROJECT_NAME)/Adapters ./build/$(PROJECT_NAME)
+	cp -r ./$(PROJECT_NAME)/PluginClasses ./build/$(PROJECT_NAME)
+	cp ./$(PROJECT_NAME)/index.js ./build/$(PROJECT_NAME)
 	cp README.md ./build/
 	cp CHANGELOG.md ./build/
 	cp LICENSE.md ./build/
@@ -43,8 +43,7 @@ clean:
 	# required section
 	echo Cleaning started...
 	rm -rf ./build/
-	rm -rf *.tar.gz
-	rm -rf ./*-lock.*
+	rm -rf ./*.tar.gz
 	echo Cleaning completed.
 	# required section
 

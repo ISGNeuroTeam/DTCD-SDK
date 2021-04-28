@@ -1,9 +1,10 @@
 export {BaseAdapter} from './Adapters/BaseAdapter';
+export {LogSystemAdapter} from './Adapters/LogSystemAdapter';
 export {EventSystemAdapter} from './Adapters/EventSystemAdapter';
 export {InteractionSystemAdapter} from './Adapters/InteractionSystemAdapter';
 export {StorageSystemAdapter} from './Adapters/StorageSystemAdapter';
 export {StyleSystemAdapter} from './Adapters/StyleSystemAdapter';
-export {LogSystemAdapter} from './Adapters/LogSystemAdapter';
+export {DataSourceSystemAdapter} from './Adapters/DataSourceSystemAdapter';
 
 export {AbstractPlugin} from './PluginClasses/AbstractPlugin';
 export {ExtensionPlugin} from './PluginClasses/ExtensionPlugin';

@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated log system adapter
 - Updated StorageSystem adapter
 
+### Added
+- DatasourceSystem adapter
+
 ## [0.1.1] - 2021-02-10
 
 ### Added

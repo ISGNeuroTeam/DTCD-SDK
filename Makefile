@@ -31,6 +31,8 @@ build: $(COMPONENTS)
 	$(SET_VERSION)
 	mkdir ./build && mkdir ./build/$(PROJECT_NAME)
 	cp -r ./$(PROJECT_NAME)/Adapters ./build/$(PROJECT_NAME)
+	cp -r ./$(PROJECT_NAME)/DatasourceClasses ./build/$(PROJECT_NAME)
+	cp -r ./$(PROJECT_NAME)/Errors ./build/$(PROJECT_NAME)
 	cp -r ./$(PROJECT_NAME)/PluginClasses ./build/$(PROJECT_NAME)
 	cp ./$(PROJECT_NAME)/index.js ./build/$(PROJECT_NAME)
 	cp README.md ./build/

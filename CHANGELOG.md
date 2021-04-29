@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - error classes
 - datasource classes
 
+### Fixed
+
+- error classes Makefile
+- datasource classes Makefile
+
 ## [0.1.1] - 2021-02-10
 
 ### Added

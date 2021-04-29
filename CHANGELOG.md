@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - DataSourceSystem adapter
 - error classes
+- datasource classes
 
 ## [0.1.1] - 2021-02-10
 

@@ -20,7 +20,7 @@ export class DataSourceSystemAdapter extends BaseAdapter {
    * @returns {string[]} DataSource types list.
    */
   get dataSourceTypes() {
-    return this.instance.datasourceTypes;
+    return this.instance.dataSourceTypes;
   }
 
   /**

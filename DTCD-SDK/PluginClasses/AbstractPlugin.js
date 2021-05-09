@@ -64,9 +64,21 @@ export class AbstractPlugin {
    * Installing plugin by name
    * @method
    * @param {String} name
+   * @return {Object} Returns instance of plugin
    */
   installPlugin(name, ...args) {
     return Application.installPlugin(name, ...args);
+  }
+
+  /**
+   * Install extension by target and name
+   * @method
+   * @param {String} target
+   * @param {String} pluginName
+   * @return {Object} Returns instance of plugin
+   */
+  installExtension(target, pluginName, ...args) {
+    return Application.installExtension(target, pluginName, ...args);
   }
 
   /**
@@ -80,7 +92,7 @@ export class AbstractPlugin {
   }
 
   /**
-   * Uninstall plugin from Application by unique identifier
+   * Uninstall plugin from Application by unique identifier (GUID)
    * @method
    * @param {String} guid Unique identifier of the instance to be uninstalled
    * @returns {Boolean}
@@ -90,12 +102,22 @@ export class AbstractPlugin {
   }
 
   /**
-   * Getting instance by guid
+   * Getting instance by GUID
    * @method
    * @param {String} guid
    * @returns {Object}
    */
   getInstance(guid) {
     return Application.getInstance(guid);
+  }
+
+  /**
+   * Getting GUID by instance of plugin
+   * @method
+   * @param {Object} instance
+   * @returns {Object}
+   */
+  getGUID(instance) {
+    return Application.getGUID(instance);
   }
 }

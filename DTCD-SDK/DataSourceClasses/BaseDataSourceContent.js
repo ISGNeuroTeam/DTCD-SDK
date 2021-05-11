@@ -3,32 +3,30 @@ import {
   AbstractMethodImplementError,
 } from './../Errors/abstractClassErrors';
 
-export class BaseDatasourceContent {
-
-  constructor () {
-    if (this.constructor === BaseDatasourceContent) {
+export class BaseDataSourceContent {
+  constructor() {
+    if (this.constructor === BaseDataSourceContent) {
       throw new AbstractClassInstanceError(this.constructor.name);
     }
   }
 
-  toDataset () {
+  toDataset() {
     throw new AbstractMethodImplementError('toDataset', this.constructor.name);
   }
 
-  toArray () {
+  toArray() {
     throw new AbstractMethodImplementError('toArray', this.constructor.name);
   }
 
-  toJSON () {
+  toJSON() {
     throw new AbstractMethodImplementError('toJSON', this.constructor.name);
   }
 
-  toString () {
+  toString() {
     throw new AbstractMethodImplementError('toString', this.constructor.name);
   }
 
-  toNumber () {
+  toNumber() {
     throw new AbstractMethodImplementError('toNumber', this.constructor.name);
   }
-
 }

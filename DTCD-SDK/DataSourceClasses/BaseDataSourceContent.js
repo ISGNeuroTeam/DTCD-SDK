@@ -1,7 +1,7 @@
 import {
   AbstractClassInstanceError,
   AbstractMethodImplementError,
-} from './../Errors/abstractClassErrors';
+} from '../Errors/AbstractClassErrors';
 
 export class BaseDataSourceContent {
   constructor() {

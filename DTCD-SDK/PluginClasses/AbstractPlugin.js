@@ -1,3 +1,4 @@
+import {AbstractMethodImplementError} from './../Errors/AbstractClassErrors';
 /**
  * @typedef {Object} PluginMeta
  * @property {String} title
@@ -18,7 +19,7 @@ export class AbstractPlugin {
    * @return {String[]} meta.dependencies
    */
   static getRegistrationMeta() {
-    throw new Error('Implement the getRegistrationMeta static method!');
+    throw new AbstractMethodImplementError('Implement the getRegistrationMeta static method!');
   }
 
   /**

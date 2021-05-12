@@ -2,7 +2,7 @@ import {ExtensionPlugin} from './../PluginClasses/ExtensionPlugin';
 import {
   AbstractClassInstanceError,
   AbstractMethodImplementError,
-} from './../Errors/abstractClassErrors';
+} from '../Errors/AbstractClassErrors';
 
 export class BaseExternalDataSource extends ExtensionPlugin {
   constructor() {

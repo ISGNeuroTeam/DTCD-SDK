@@ -9,11 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- AbstractMethodImplementError into abstract classes
 - Updated log system adapter
 - Updated StorageSystem adapter
 
 ### Added
 
+- AbstractMethodImplementError
+- InProgressError class
 - installExtension method to AbstractPlugin class
 - getGUID method to AbstractPlugin class
 - DataSourceSystem adapter

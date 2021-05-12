@@ -1,30 +1,28 @@
 import {
   AbstractClassInstanceError,
   AbstractMethodImplementError,
-} from './../Errors/abstractClassErrors';
+} from './../Errors/AbstractClassErrors';
 
 export class BaseDataset {
-
-  constructor () {
+  constructor() {
     if (this.constructor === BaseDataset) {
       throw new AbstractClassInstanceError(this.constructor.name);
     }
   }
 
-  full () {
+  full() {
     throw new AbstractMethodImplementError('full', this.constructor.name);
   }
 
-  firstLine () {
+  firstLine() {
     throw new AbstractMethodImplementError('firstLine', this.constructor.name);
   }
 
-  lastLine () {
+  lastLine() {
     throw new AbstractMethodImplementError('lastLine', this.constructor.name);
   }
 
-  getLineByNumber () {
+  getLineByNumber() {
     throw new AbstractMethodImplementError('getLineByNumber', this.constructor.name);
   }
-
 }

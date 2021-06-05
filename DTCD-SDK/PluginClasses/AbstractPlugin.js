@@ -1,4 +1,4 @@
-import {AbstractMethodImplementError} from './../Errors/AbstractClassErrors';
+import { AbstractMethodImplementError } from './../Errors/AbstractClassErrors';
 /**
  * @typedef {Object} PluginMeta
  * @property {String} title
@@ -120,5 +120,9 @@ export class AbstractPlugin {
    */
   getGUID(instance) {
     return Application.getGUID(instance);
+  }
+
+  getPlugin(name, type = false) {
+    return Application.getPlugin(name, type);
   }
 }

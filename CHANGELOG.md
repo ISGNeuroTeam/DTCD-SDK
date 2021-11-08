@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- EventSystemAdapter without methods createAction and createEvent
 - AbstractMethodImplementError into abstract classes
 - Updated log system adapter
 - Updated StorageSystem adapter

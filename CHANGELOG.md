@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Method registerPluginInstance of EventSystem with "customGUID" param
 - EventSystemAdapter without methods createAction and createEvent
 - AbstractMethodImplementError into abstract classes
 - Updated log system adapter
@@ -16,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- getGUIDList method to AbstractPlugin class
 - AbstractMethodImplementError
 - InProgressError class
 - installExtension method to AbstractPlugin class

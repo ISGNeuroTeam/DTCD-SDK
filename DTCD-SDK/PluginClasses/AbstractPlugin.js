@@ -122,6 +122,15 @@ export class AbstractPlugin {
     return Application.getGUID(instance);
   }
 
+  /**
+   * Getting list of all GUID's
+   * @method
+   * @returns {String[]}
+   */
+  getGUIDList() {
+    return Application.getGUIDList();
+  }
+
   getPlugin(name, type = false) {
     return Application.getPlugin(name, type);
   }

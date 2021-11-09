@@ -6,6 +6,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * @constructor
+   * @param {String} guid guid of plugin, in which the adapter instance will be inited
    */
   constructor(guid) {
     super();
@@ -15,6 +16,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Configure state of EventSystem by object
+   * @method
    * @param {*} conf Config object
    * @returns {Boolean} true, if everything is ok
    */
@@ -24,6 +26,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Getting state of EventSystem
+   * @method
    * @returns {*} State of system by object
    */
   getPluginConfig() {
@@ -45,16 +48,21 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Register methods of instance as actions in EventSystem. Register events of instance by names.
+   * @method
    * @param {*} obj An instance of the plugin being registered
    * @param {String[]} eventList Array of eventNames of plugin that being registered
+   * @param {String} customGUID instance guid of plugin that will register
    * @returns {Boolean} true, if everything is ok
    */
-  registerPluginInstance(obj, eventList) {
-    return this.#instance.registerPluginInstance(this.#guid, obj, eventList);
+  registerPluginInstance(obj, eventList, customGUID) {
+    if (typeof customGUID === 'undefined')
+      return this.#instance.registerPluginInstance(this.#guid, obj, eventList);
+    else return this.#instance.registerPluginInstance(customGUID, obj, eventList);
   }
 
   /**
    * Adding event type to event list into eventSystem (register them)
+   * @method
    * @param {String} eventName event name
    * @returns {Boolean} true, if everything is ok
    */
@@ -64,6 +72,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Register new action
+   * @method
    * @param {String} actionName action name
    * @param {Function} callback callback whitch invoked on event
    * @returns {Boolean} true, if everything is ok
@@ -74,6 +83,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Publishes event from instance by name
+   * @method
    * @param {String} eventName event name
    * @param {*} args ...
    * @returns {Boolean} true, if everything is ok
@@ -84,6 +94,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Subscribing
+   * @method
    * @param {String} eventGUID instance guid of firing plugin
    * @param {String} eventName name of event
    * @param {String} actionsGUID instance guid of plugin whom invoke callback
@@ -96,6 +107,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Subsribes all events with the given name to the action
+   * @method
    * @param {String} actionsGUID instance guid of plugin who invokes callback
    * @param {String} actionName name of action
    * @param {String} eventName name of event
@@ -107,6 +119,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Subsribes all events with the given name to the action
+   * @method
    * @param {String} eventGUID instance guid of plugin who publishes the event
    * @param {String} eventName name of action
    * @param {String} actionName name of action
@@ -118,6 +131,7 @@ export class EventSystemAdapter extends BaseAdapter {
 
   /**
    * Subsribe all actions with the given name on all events with name
+   * @method
    * @param {String} eventName name of action
    * @param {String} actionName name of action
    * @returns {Boolean} true, if everything is ok

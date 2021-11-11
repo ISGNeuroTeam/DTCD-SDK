@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - DataSourceSystem adapter
 - error classes
 - datasource classes
+- getter for current config to WorkspaceSystemAdapter
 
 ### Fixed
 

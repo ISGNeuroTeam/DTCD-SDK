@@ -11,6 +11,14 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   }
 
   /**
+   * Getting current workspace configuration
+   * @getter
+   */
+  get currentConfiguration() {
+    return this.instance.currentConfiguration;
+  }
+
+  /**
    * Delete workspace configuration with the given id
    * @method
    * @param {number} id identifier of configuration

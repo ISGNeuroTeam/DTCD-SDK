@@ -11,20 +11,31 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   }
 
   /**
-   * Getting current workspace configuration
-   * @getter
+   * Setting new workspace state from config
+   * @method
+   * @returns {Boolean} true, if everything is ok
    */
-  get currentConfiguration() {
-    return this.instance.currentConfiguration;
+  setPluginConfig(conf) {
+    return this.instance.setPluginConfig(conf);
+  }
+
+  /**
+   * Getting current workspace state
+   * @method
+   * @returns {*} workspace state
+   */
+  getPluginConfig(conf) {
+    return this.instance.setPluginConfig(conf);
   }
 
   /**
    * Delete workspace configuration with the given id
    * @method
    * @param {number} id identifier of configuration
+   * @returns {Boolean} true, if everything is ok
    */
   async deleteConfiguration(id) {
-    await this.instance.deleteConfiguration(id);
+    return await this.instance.deleteConfiguration(id);
   }
 
   /**
@@ -43,7 +54,7 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @param {string} newTitle new title to set
    */
   async changeConfigurationTitle(id, newTitle) {
-    await this.instance.changeConfigurationTitle(id, newTitle);
+    return await this.instance.changeConfigurationTitle(id, newTitle);
   }
 
   /**
@@ -52,7 +63,7 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @param {string} configurationTitle title to set to new configuration
    */
   async createEmptyConfiguration(configurationTitle) {
-    await this.instance.createEmptyConfiguration(configurationTitle);
+    return await this.instance.createEmptyConfiguration(configurationTitle);
   }
 
   /**
@@ -60,7 +71,7 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @method
    */
   async saveConfiguration() {
-    await this.instance.saveConfiguration();
+    return await this.instance.saveConfiguration();
   }
 
   /**
@@ -69,23 +80,7 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @param {number} id identifier of configuration
    */
   setConfiguration(id) {
-    this.instance.setConfiguration(id);
-  }
-
-  /**
-   * Compacts panels to top left corner of screen
-   * @method
-   */
-  compactAllPanels() {
-    this.instance.compactAllPanels();
-  }
-
-  /**
-   * Changes current workspace mode
-   * @method
-   */
-  changeMode() {
-    this.instance.changeMode();
+    return this.instance.setConfiguration(id);
   }
 
   /**
@@ -93,13 +88,48 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @method
    */
   setDefaultConfiguration() {
-    this.instance.setDefaultConfiguration();
+    return this.instance.setDefaultConfiguration();
   }
+
+  /**
+   * Compacts panels to top left corner of screen
+   * @method
+   */
+  compactAllPanels() {
+    return this.instance.compactAllPanels();
+  }
+
+  /**
+   * Changes current workspace mode
+   * @method
+   */
+  changeMode() {
+    return this.instance.changeMode();
+  }
+
   /**
    * Creates empty cell widget on workspace
    * @method
    */
-  createEmptyCell() {
-    this.instance.createEmptyCell();
+  createEmptyCell(...args) {
+    return this.instance.createEmptyCell(...args);
+  }
+
+  /**
+   * Settting new column count
+   * @method
+   * @param {Number} newColumn new count of column in grid
+   */
+  setColumn(newColumn) {
+    return this.instance.setColumn(newColumn);
+  }
+
+  /**
+   * Deleting cell of workspace
+   * @method
+   * @param {String} cellID id of cell in grid
+   */
+  deleteCell(cellID) {
+    return this.instance.deleteCell(cellID);
   }
 }

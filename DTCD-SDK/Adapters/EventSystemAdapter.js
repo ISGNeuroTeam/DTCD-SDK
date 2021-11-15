@@ -99,7 +99,7 @@ export class EventSystemAdapter extends BaseAdapter {
    * @param {String} eventName name of event
    * @param {String} actionsGUID instance guid of plugin whom invoke callback
    * @param {String} actionName name of action
-   * @returns {Boolean} true, if everything is ok
+   * @returns {String} token of subscription
    */
   subscribe(eventGUID, eventName, actionGUID, actionName) {
     return this.#instance.subscribe(eventGUID, eventName, actionGUID, actionName);

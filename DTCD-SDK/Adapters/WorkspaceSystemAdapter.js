@@ -24,8 +24,8 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @method
    * @returns {*} workspace state
    */
-  getPluginConfig(conf) {
-    return this.instance.getPluginConfig(conf);
+  getPluginConfig() {
+    return this.instance.getPluginConfig();
   }
 
   /**

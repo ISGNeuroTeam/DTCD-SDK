@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - error classes
 - datasource classes
 - getter for current config to WorkspaceSystemAdapter
+- added 'args' parameter to EventSystem's registerEvent and subscribe methods
 
 ### Fixed
 

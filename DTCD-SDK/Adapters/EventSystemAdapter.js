@@ -66,8 +66,8 @@ export class EventSystemAdapter extends BaseAdapter {
    * @param {String} eventName event name
    * @returns {Boolean} true, if everything is ok
    */
-  registerEvent(eventName, args) {
-    return this.#instance.registerEvent(this.#guid, eventName, args);
+  registerEvent(eventName, ...args) {
+    return this.#instance.registerEvent(this.#guid, eventName, ...args);
   }
 
   /**
@@ -99,10 +99,11 @@ export class EventSystemAdapter extends BaseAdapter {
    * @param {String} eventName name of event
    * @param {String} actionsGUID instance guid of plugin whom invoke callback
    * @param {String} actionName name of action
-   * @returns {String} token of subscription
+   * @param {Array} args arguments of event
+   * @returns {Boolean} true, if everything is ok
    */
-  subscribe(eventGUID, eventName, actionGUID, actionName) {
-    return this.#instance.subscribe(eventGUID, eventName, actionGUID, actionName);
+  subscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
+    return this.#instance.subscribe(eventGUID, eventName, actionGUID, actionName, ...args);
   }
 
   /**

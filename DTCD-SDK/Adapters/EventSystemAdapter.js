@@ -107,37 +107,51 @@ export class EventSystemAdapter extends BaseAdapter {
   }
 
   /**
-   * Subsribes all events with the given name to the action
+   * Unsubscribing
    * @method
-   * @param {String} actionsGUID instance guid of plugin who invokes callback
-   * @param {String} actionName name of action
+   * @param {String} eventGUID instance guid of firing plugin
    * @param {String} eventName name of event
+   * @param {String} actionsGUID instance guid of plugin whom invoke callback
+   * @param {String} actionName name of action
+   * @param {Array} args arguments of event
    * @returns {Boolean} true, if everything is ok
    */
-  subscribeActionOnEventName(actionGUID, actionName, eventName) {
-    return this.#instance.subscribeActionOnEventName(actionGUID, actionName, eventName);
+  unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
+    return this.#instance.unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args);
   }
 
-  /**
-   * Subsribes all events with the given name to the action
-   * @method
-   * @param {String} eventGUID instance guid of plugin who publishes the event
-   * @param {String} eventName name of action
-   * @param {String} actionName name of action
-   * @returns {Boolean} true, if everything is ok
-   */
-  subscribeEventOnActionName(eventGUID, eventName, actionName) {
-    return this.#instance.subscribeEventOnActionName(eventGUID, eventName, actionName);
-  }
+  // /**
+  //  * Subsribes all events with the given name to the action
+  //  * @method
+  //  * @param {String} actionsGUID instance guid of plugin who invokes callback
+  //  * @param {String} actionName name of action
+  //  * @param {String} eventName name of event
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeActionOnEventName(actionGUID, actionName, eventName) {
+  //   return this.#instance.subscribeActionOnEventName(actionGUID, actionName, eventName);
+  // }
 
-  /**
-   * Subsribe all actions with the given name on all events with name
-   * @method
-   * @param {String} eventName name of action
-   * @param {String} actionName name of action
-   * @returns {Boolean} true, if everything is ok
-   */
-  subscribeByNames(eventName, actionName) {
-    return this.#instance.subscribeByNames(eventName, actionName);
-  }
+  // /**
+  //  * Subsribes all events with the given name to the action
+  //  * @method
+  //  * @param {String} eventGUID instance guid of plugin who publishes the event
+  //  * @param {String} eventName name of action
+  //  * @param {String} actionName name of action
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeEventOnActionName(eventGUID, eventName, actionName) {
+  //   return this.#instance.subscribeEventOnActionName(eventGUID, eventName, actionName);
+  // }
+
+  // /**
+  //  * Subsribe all actions with the given name on all events with name
+  //  * @method
+  //  * @param {String} eventName name of action
+  //  * @param {String} actionName name of action
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeByNames(eventName, actionName) {
+  //   return this.#instance.subscribeByNames(eventName, actionName);
+  // }
 }

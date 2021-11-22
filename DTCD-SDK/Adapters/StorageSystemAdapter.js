@@ -5,12 +5,11 @@ import { BaseAdapter } from './BaseAdapter';
  * @class @extends BaseAdapter
  */
 export class StorageSystemAdapter extends BaseAdapter {
-
   /**
    * Initialize StorageSystemAdapter instance.
    * @constructor
    */
-  constructor () {
+  constructor() {
     super();
     this.instance = this.getSystem('StorageSystem');
   }
@@ -20,8 +19,16 @@ export class StorageSystemAdapter extends BaseAdapter {
    * @property @public
    * @returns {SessionModule} SessionModule instance.
    */
-  get session () {
+  get session() {
     return this.instance.session;
   }
 
+  /**
+   * Token module.
+   * @property @public
+   * @returns {TokenModule} TokenModule instance.
+   */
+  get tokenStorage() {
+    return this.instance.tokenStorage;
+  }
 }

@@ -1,4 +1,4 @@
-import {BaseAdapter} from './BaseAdapter';
+import { BaseAdapter } from './BaseAdapter';
 
 /**
  * DataSourceSystem adapter class.
@@ -31,5 +31,25 @@ export class DataSourceSystemAdapter extends BaseAdapter {
    */
   createDataSource(type) {
     return this.instance.createDataSource(type);
+  }
+
+  editDataSource(name, params) {
+    return this.instance.editDataSource(name, params);
+  }
+
+  runDataSource(name) {
+    return this.instance.runDataSource(name);
+  }
+
+  getDataSource(name) {
+    return this.instance.getDataSource(name);
+  }
+
+  removeDataSource(name) {
+    return this.instance.removeDataSource(name);
+  }
+
+  getDataSourceList() {
+    return this.instance.getDataSourceList();
   }
 }

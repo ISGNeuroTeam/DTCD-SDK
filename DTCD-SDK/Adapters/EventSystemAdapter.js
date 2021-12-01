@@ -78,7 +78,18 @@ export class EventSystemAdapter extends BaseAdapter {
    * @returns {Boolean} true, if everything is ok
    */
   registerAction(actionName, callback) {
-    return this.#instance.createActionByCallback(this.#guid, actionName, callback);
+    return this.#instance.registerAction(this.#guid, actionName, callback);
+  }
+
+  /**
+   * Register new custom action
+   * @method
+   * @param {String} actionName action name
+   * @param {Function} callback callback whitch invoked on event
+   * @returns {Boolean} true, if everything is ok
+   */
+  registerCustomAction(actionName, callback) {
+    return this.#instance.registerCustomAction(actionName, callback);
   }
 
   /**

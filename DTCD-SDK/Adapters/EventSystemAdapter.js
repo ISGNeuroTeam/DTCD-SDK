@@ -91,6 +91,14 @@ export class EventSystemAdapter extends BaseAdapter {
   registerCustomAction(actionName, callback) {
     return this.#instance.registerCustomAction(actionName, callback);
   }
+  /**
+   * Removes custom actions from EventSystem
+   * @method
+   * @param {String} customActionName custom action name
+   */
+  removeCustomAction(customActionName) {
+    return this.#instance.removeCustomAction(customActionName);
+  }
 
   /**
    * Publishes event from instance by name

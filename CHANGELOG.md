@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - getter for TokenStorage module in StorageSystemAdapter
 - unsubscribe method to EvenSystemAdapter
 - added DataSourceSystem public API to adapter
+- removeCustomAction method to EventSystemAdapter
 
 ### Fixed
 

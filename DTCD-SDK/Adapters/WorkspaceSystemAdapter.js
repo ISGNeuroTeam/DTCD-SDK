@@ -132,4 +132,21 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   deleteCell(cellID) {
     return this.instance.deleteCell(cellID);
   }
+
+  /**
+   * Opening panel in modal
+   * @method
+   * @param {String} panelName name of panel plugin
+   */
+  openPanelInModal(panelName) {
+    return this.instance.openPanelInModal(panelName);
+  }
+
+  /**
+   * Close modal
+   * @method
+   */
+  closeModal() {
+    return this.instance.closeModal();
+  }
 }

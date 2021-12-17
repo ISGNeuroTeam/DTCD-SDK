@@ -1,161 +1,176 @@
-import {BaseAdapter} from './BaseAdapter';
+import { BaseAdapter } from './BaseAdapter';
 
 export class EventSystemAdapter extends BaseAdapter {
-	/**
-	 * @constructor
-	 */
-	constructor() {
-		super();
-		this.instance = this.getSystem('EventSystem');
-	}
+  #guid;
+  #instance;
 
-	/**
-	 * Adding CustomEvent object to events array
-	 * @param {Object} customEvent
-	 */
-	registerEvent(customEvent) {
-		this.instance.registerEvent(customEvent);
-		return true;
-	}
-	/**
-	 * Creates and publishes a new event to EventSystem
-	 * @param {Number} guid identifier of plugin instance
-	 * @param {String} eventName event name
-	 * @param {*} args additional data in event for action
-	 */
-	createAndPublish(guid, eventName, args) {
-		this.instance.createAndPublish(guid, eventName, args);
-	}
+  /**
+   * @constructor
+   * @param {String} guid guid of plugin, in which the adapter instance will be inited
+   */
+  constructor(guid) {
+    super();
+    this.#guid = guid;
+    this.#instance = this.getSystem('EventSystem');
+  }
 
-	/**
-	 * Publishes event from CustomEvent instance
-	 * @param {CustomEvent} customEvent instance of CustomEvent
-	 */
-	publishEvent(customEvent) {
-		this.publishEvent(customEvent);
-	}
+  /**
+   * Configure state of EventSystem by object
+   * @method
+   * @param {*} conf Config object
+   * @returns {Boolean} true, if everything is ok
+   */
+  setPluginConfig(conf) {
+    return this.#instance.setPluginConfig(conf);
+  }
 
-	/**
-	 * Creates new instance of CustomEvent
-	 * @param {Number} guid identifier of plugin instance
-	 * @param {String} eventName event name
-	 * @param {*} args additional data in event for action
-	 * @returns {CustomEvent} created instance of CustomEvent
-	 */
-	createEvent(guid, eventName, args = null) {
-		return this.instance.createEvent(guid, eventName, args);
-	}
+  /**
+   * Getting state of EventSystem
+   * @method
+   * @returns {*} State of system by object
+   */
+  getPluginConfig() {
+    return this.#instance.getPluginConfig();
+  }
 
-	/**
-	 * Creates new instance of CustomAction
-	 * @param {String} actionName action name
-	 * @param {Number} guid identifier of plugin instance
-	 * @param {*} args ...
-	 * @returns {CustomAction} created instance of CustomAction
-	 */
-	createAction(actionName, guid, args = null) {
-		return this.instance.createAction(actionName, guid, args);
-	}
+  // ---- getters ----
+  get events() {
+    return this.#instance.events;
+  }
 
-	/**
-	 * Creates instance of CustomAction from the given callback and pushes it to action list
-	 * @param {String} actionName action name
-	 * @param {Number} guid identifier of plugin instance
-	 * @param {Function} callback callback whitch invoked on event
-	 * @param {*} args ...
-	 * @returns {CustomAction} created instance of CustomAction
-	 */
-	createActionByCallback(actionName, guid, callback, args = null) {
-		return this.instance.createActionByCallback(actionName, guid, callback, args);
-	}
+  get actions() {
+    return this.#instance.actions;
+  }
 
-	/**
-	 * Subsribes all events with the given name to action with the given actionID
-	 * @param {String} eventName event name
-	 * @param {String} actionID action id
-	 * @returns {Boolean} true, if everything is ok
-	 */
-	subscribeEventsByName(eventName, actionID) {
-		return this.instance.subscribeEventsByName(eventName, actionID);
-	}
-	/**
-	 * Subsribes all events with the given eventName to all action with the given actionName
-	 * @param {String} eventName event name
-	 * @param {String} actionName action name
-	 * @returns {Boolean} true, if everything is ok
-	 */
-	subscribeByNames(eventName, actionName) {
-		return this.instance.subscribeByNames(eventName, actionName);
-	}
+  get subscriptions() {
+    return this.#instance.subscriptions;
+  }
 
-	/**
-	 * Subscribes the given instance of event to the given instace of action
-	 * @param {CustomEvent} event instance of CustomEvent
-	 * @param {CustomAction} action instance of CustomAction
-	 * @returns {Boolean} true, if everything is ok
-	 */
-	subscribe(event, action) {
-		return this.instance.subscribe(event, action);
-	}
+  /**
+   * Register methods of instance as actions in EventSystem. Register events of instance by names.
+   * @method
+   * @param {*} obj An instance of the plugin being registered
+   * @param {String[]} eventList Array of eventNames of plugin that being registered
+   * @param {String} customGUID instance guid of plugin that will register
+   * @returns {Boolean} true, if everything is ok
+   */
+  registerPluginInstance(obj, eventList, customGUID) {
+    if (typeof customGUID === 'undefined')
+      return this.#instance.registerPluginInstance(this.#guid, obj, eventList);
+    else return this.#instance.registerPluginInstance(customGUID, obj, eventList);
+  }
 
-	/**
-	 * Subscribes to all events with the given event name and sets the given callback
-	 * @param {String} eventName
-	 * @param {Function} callback
-	 */
-	subscribeEventNameByCallback(eventName, callback) {
-		this.instance.subscribeEventNameByCallback(eventName, callback);
-	}
+  /**
+   * Adding event type to event list into eventSystem (register them)
+   * @method
+   * @param {String} eventName event name
+   * @returns {Boolean} true, if everything is ok
+   */
+  registerEvent(eventName, ...args) {
+    return this.#instance.registerEvent(this.#guid, eventName, ...args);
+  }
 
-	/**
-	 * Returns instace of action stored in EventSystem from the given actionID
-	 * @param {String} actionID actionID of the action
-	 * @returns {CustomAction} instance of CustomAction stored in EventSystem
-	 */
-	findActionById(actionID) {
-		return this.instance.findAction(actionID);
-	}
+  /**
+   * Register new action
+   * @method
+   * @param {String} actionName action name
+   * @param {Function} callback callback whitch invoked on event
+   * @returns {Boolean} true, if everything is ok
+   */
+  registerAction(actionName, callback) {
+    return this.#instance.registerAction(this.#guid, actionName, callback);
+  }
 
-	/**
-	 * Returns instace of event stored in EventSystem from the given eventID
-	 * @param {String} eventID eventID of the event
-	 * @returns {CustomEvent} instance of CustomEvent stored in EventSystem
-	 */
-	findEventById(eventID) {
-		return this.instance.findEventById(eventID);
-	}
+  /**
+   * Register new custom action
+   * @method
+   * @param {String} actionName action name
+   * @param {Function} callback callback whitch invoked on event
+   * @returns {Boolean} true, if everything is ok
+   */
+  registerCustomAction(actionName, callback) {
+    return this.#instance.registerCustomAction(actionName, callback);
+  }
+  /**
+   * Removes custom actions from EventSystem
+   * @method
+   * @param {String} customActionName custom action name
+   */
+  removeCustomAction(customActionName) {
+    return this.#instance.removeCustomAction(customActionName);
+  }
 
-	/**
-	 * Returns instaces of events stored in EventSystem from the given event name
-	 * @param {String} eventName event name
-	 * @returns {Array} instaces of events stored in EventSystem
-	 */
-	findEventsByName(eventName) {
-		return this.instance.findEventsByName(eventName);
-	}
+  /**
+   * Publishes event from instance by name
+   * @method
+   * @param {String} eventName event name
+   * @param {*} args ...
+   * @returns {Boolean} true, if everything is ok
+   */
+  publishEvent(eventName, args) {
+    return this.#instance.publishEvent(this.#guid, eventName, args);
+  }
 
-	/**
-	 * Returns instaces of actions stored in EventSystem from the given action name
-	 * @param {String} actionName
-	 * @returns {Array} instaces of actions stored in EventSystem
-	 */
-	findActionsByName(actionName) {
-		return this.instance.findActionsByName(actionName);
-	}
+  /**
+   * Subscribing
+   * @method
+   * @param {String} eventGUID instance guid of firing plugin
+   * @param {String} eventName name of event
+   * @param {String} actionsGUID instance guid of plugin whom invoke callback
+   * @param {String} actionName name of action
+   * @param {Array} args arguments of event
+   * @returns {Boolean} true, if everything is ok
+   */
+  subscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
+    return this.#instance.subscribe(eventGUID, eventName, actionGUID, actionName, ...args);
+  }
 
-	/**
-	 * Return list of available event instances stored in EventSystem
-	 * @returns {Array} instaces of events stored in EventSystem
-	 */
-	showAvailableEvents() {
-		return this.instance.showAvailableEvents();
-	}
+  /**
+   * Unsubscribing
+   * @method
+   * @param {String} eventGUID instance guid of firing plugin
+   * @param {String} eventName name of event
+   * @param {String} actionsGUID instance guid of plugin whom invoke callback
+   * @param {String} actionName name of action
+   * @param {Array} args arguments of event
+   * @returns {Boolean} true, if everything is ok
+   */
+  unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
+    return this.#instance.unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args);
+  }
 
-	/**
-	 * Return list of available action instances stored in EventSystem
-	 * @returns {Array} instaces of actions stored in EventSystem
-	 */
-	showAvailableActions() {
-		return this.instance.showAvailableActions();
-	}
+  // /**
+  //  * Subsribes all events with the given name to the action
+  //  * @method
+  //  * @param {String} actionsGUID instance guid of plugin who invokes callback
+  //  * @param {String} actionName name of action
+  //  * @param {String} eventName name of event
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeActionOnEventName(actionGUID, actionName, eventName) {
+  //   return this.#instance.subscribeActionOnEventName(actionGUID, actionName, eventName);
+  // }
+
+  // /**
+  //  * Subsribes all events with the given name to the action
+  //  * @method
+  //  * @param {String} eventGUID instance guid of plugin who publishes the event
+  //  * @param {String} eventName name of action
+  //  * @param {String} actionName name of action
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeEventOnActionName(eventGUID, eventName, actionName) {
+  //   return this.#instance.subscribeEventOnActionName(eventGUID, eventName, actionName);
+  // }
+
+  // /**
+  //  * Subsribe all actions with the given name on all events with name
+  //  * @method
+  //  * @param {String} eventName name of action
+  //  * @param {String} actionName name of action
+  //  * @returns {Boolean} true, if everything is ok
+  //  */
+  // subscribeByNames(eventName, actionName) {
+  //   return this.#instance.subscribeByNames(eventName, actionName);
+  // }
 }

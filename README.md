@@ -1,12 +1,12 @@
 # DTCD-SDK
 
-SDK is a collection absctract classes and adapters needed for creating new plugin for WebGUI.
+SDK is a collection of absctract classes and adapters for creating new plugin for DTCD.
 
 ## Getting Started
 
 To use this SDK, you need to clone the repository and place it next to the plugin used by this SDK.
 
-To create a new plugin, you should import the abstract plugin class depending on the type of plugin you are creating and inherit from it.
+To create a new plugin, you should import the abstract class depending on the type of plugin you are creating and extend from it.
 
 There are the following 3 types of abstract plugins:
 
@@ -14,15 +14,17 @@ There are the following 3 types of abstract plugins:
 - ExtensionPlugin
 - PanelPlugin
 
-To use systems inside the plugin, you should import adapters to the systems you need, create instances of them and use them inside the code.
+To use systems inside the plugin, you should import adapters of the systems you need, create instances of them and use them inside the code.
 
-There are 6 adapters for the following systems:
+There are adapters for the following systems:
 
+- DatasourceSystem
 - EventSystem
 - InteractionSystem
 - LogSystem
 - StorageSystem
 - StyleSystem
+- WorkspaceSystem
 
 ### Prerequisites
 
@@ -43,17 +45,18 @@ make test
 ## Deployment
 
 Unpack the `DTCD-SDK-*.tar.gz` archive to the desired location:
+
 ```
 tar -zxf DTCD-SDK-*.tar.gz ./DTCD-SDK
 ```
 
 Import the software modules you need:
+
 ```
 import { StorageSystemAdapter } from '<path-to-sdk>/DTCD-SDK'
 ```
 
 ## Built With
-
 
 ## Contributing
 

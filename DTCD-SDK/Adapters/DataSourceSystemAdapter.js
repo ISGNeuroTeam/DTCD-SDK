@@ -26,29 +26,57 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   /**
    * Create a datasource of a specific type.
    * @method @public
-   * @param {string} type DataSource type name.
+   * @param {string} name DataSource name.
+   * @param {string} type DataSource type.
+   * @param {Object} datasourceParams parameters of datasource.
    * @returns {Object} DataSource class instance.
    */
-  createDataSource(type) {
-    return this.instance.createDataSource(type);
+  createDataSource(name, type, datasourceParams) {
+    return this.instance.createDataSource(name, type, datasourceParams);
   }
 
+  /**
+   * Edits a specific datasource.
+   * @method @public
+   * @param {string} name DataSource name.
+   */
   editDataSource(name, params) {
     return this.instance.editDataSource(name, params);
   }
 
+  /**
+   * Execute a specific datasource.
+   * @method @public
+   * @param {string} name DataSource name.
+   */
   runDataSource(name) {
     return this.instance.runDataSource(name);
   }
 
+  /**
+   * Returns a specific datasource.
+   * @method @public
+   * @param {string} name DataSource name.
+   * @returns {Object} datasource.
+   */
   getDataSource(name) {
     return this.instance.getDataSource(name);
   }
 
+  /**
+   * Removes a datasource.
+   * @method @public
+   * @param {string} name DataSource name.
+   */
   removeDataSource(name) {
     return this.instance.removeDataSource(name);
   }
 
+  /**
+   * Returns an array of datasources.
+   * @method @public
+   * @returns {Array} array of datasources.
+   */
   getDataSourceList() {
     return this.instance.getDataSourceList();
   }

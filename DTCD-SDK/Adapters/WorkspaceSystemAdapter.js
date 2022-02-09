@@ -4,10 +4,19 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   /**
    * Initialize WorkspaceSystemAdapter instance.
    * @constructor
+   * @param {String} version version of system in adapter
    */
-  constructor() {
+  constructor(version) {
     super();
-    this.instance = this.getSystem('WorkspaceSystem');
+    this.instance = this.getSystem('WorkspaceSystem', version);
+  }
+
+  /**
+   * This method returns guid of system used in adapter
+   * @returns {String} guid of the instance
+   */
+  getGUID() {
+    return this.getGUID(this.instance);
   }
 
   /**

@@ -8,10 +8,19 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   /**
    * Initialize DataSourceSystemAdapter instance.
    * @constructor
+   * @param {String} version version of system in adapter
    */
-  constructor() {
-    super();
-    this.instance = this.getSystem('DataSourceSystem');
+  constructor(version) {
+    super(version);
+    this.instance = this.getSystem('DataSourceSystem', version);
+  }
+
+  /**
+   * This method returns guid of system used in adapter
+   * @returns {String} guid of the instance
+   */
+  getGUID() {
+    return this.getGUID(this.instance);
   }
 
   /**

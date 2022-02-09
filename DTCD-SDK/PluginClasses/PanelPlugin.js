@@ -1,5 +1,5 @@
-import {AbstractPlugin} from './AbstractPlugin';
-import {AbstractMethodImplementError} from './../Errors/AbstractClassErrors';
+import { AbstractPlugin } from './AbstractPlugin';
+import { AbstractMethodImplementError } from './../Errors/AbstractClassErrors';
 
 export class PanelPlugin extends AbstractPlugin {
   /**

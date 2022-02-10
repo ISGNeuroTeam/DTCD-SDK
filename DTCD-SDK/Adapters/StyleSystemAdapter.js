@@ -16,7 +16,7 @@ export class StyleSystemAdapter extends BaseAdapter {
    * @returns {String} guid of the instance
    */
   getGUID() {
-    return this.getGUID(this.instance);
+    return super.getGUID(this.instance);
   }
 
   /**

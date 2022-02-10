@@ -11,7 +11,7 @@ export class DataSourceSystemAdapter extends BaseAdapter {
    * @param {String} version version of system in adapter
    */
   constructor(version) {
-    super(version);
+    super();
     this.instance = this.getSystem('DataSourceSystem', version);
   }
 
@@ -20,7 +20,7 @@ export class DataSourceSystemAdapter extends BaseAdapter {
    * @returns {String} guid of the instance
    */
   getGUID() {
-    return this.getGUID(this.instance);
+    return super.getGUID(this.instance);
   }
 
   /**

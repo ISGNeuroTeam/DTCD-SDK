@@ -15,7 +15,7 @@ export class InteractionSystemAdapter extends BaseAdapter {
    * @returns {String} guid of the instance
    */
   getGUID() {
-    return this.getGUID(this.instance);
+    return super.getGUID(this.instance);
   }
   /**
    * Sends GET request to the given url with config

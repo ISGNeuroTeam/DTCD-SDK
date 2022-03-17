@@ -6,6 +6,7 @@ export { StorageSystemAdapter } from './Adapters/StorageSystemAdapter';
 export { StyleSystemAdapter } from './Adapters/StyleSystemAdapter';
 export { DataSourceSystemAdapter } from './Adapters/DataSourceSystemAdapter';
 export { WorkspaceSystemAdapter } from './Adapters/WorkspaceSystemAdapter';
+export { RouteSystemAdapter } from './Adapters/RouteSystemAdapter';
 
 export { AbstractPlugin } from './PluginClasses/AbstractPlugin';
 export { ExtensionPlugin } from './PluginClasses/ExtensionPlugin';

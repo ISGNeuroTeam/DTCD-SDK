@@ -12,6 +12,8 @@ export { AppGUISystemAdapter } from './Adapters/AppGUISystemAdapter';
 export { AbstractPlugin } from './PluginClasses/AbstractPlugin';
 export { ExtensionPlugin } from './PluginClasses/ExtensionPlugin';
 export { PanelPlugin } from './PluginClasses/PanelPlugin';
+export { AppPanelPlugin } from './PluginClasses/AppPanelPlugin';
+export { VisualisationPanelPlugin } from './PluginClasses/VisualisationPanelPlugin';
 export { SystemPlugin } from './PluginClasses/SystemPlugin';
 
 export { InProgressError } from './Errors/InProgressError';

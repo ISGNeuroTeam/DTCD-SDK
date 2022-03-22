@@ -7,6 +7,7 @@ export class LogSystemAdapter extends BaseAdapter {
    * @param {String} guid guid of plugin instance
    * @param {String} pluginName name of plugin
    */
+
   constructor(version, guid, pluginName) {
     super();
     this.instance = this.getSystem('LogSystem', version);

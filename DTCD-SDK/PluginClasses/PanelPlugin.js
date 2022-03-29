@@ -3,7 +3,7 @@ import { AbstractMethodImplementError } from './../Errors/AbstractClassErrors';
 
 export class PanelPlugin extends AbstractPlugin {
   constructor(guid, selector) {
-    // super();
+    super();
     // const outerWrapper = document.getElementById(selector.slice(1));
     // const innerWrapper = document.createElement('div');
     // outerWrapper.id = '';

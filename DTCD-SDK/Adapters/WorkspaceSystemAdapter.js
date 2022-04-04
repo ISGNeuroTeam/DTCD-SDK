@@ -147,8 +147,8 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @method
    * @param {String} panelName name of panel plugin
    */
-  openPanelInModal(panelName) {
-    return this.instance.openPanelInModal(panelName);
+  openPanelInModal(panelName, version) {
+    return this.instance.openPanelInModal(panelName, version);
   }
 
   /**

@@ -33,6 +33,15 @@ export class StorageSystemAdapter extends BaseAdapter {
   }
 
   /**
+   * Persist module.
+   * @property @public
+   * @returns {PersistModule} PersistModule instance.
+   */
+  get persist() {
+    return this.instance.persist;
+  }
+
+  /**
    * Token module.
    * @property @public
    * @returns {TokenModule} TokenModule instance.

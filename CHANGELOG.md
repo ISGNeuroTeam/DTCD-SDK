@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - refactored DataSource adapter for a new system API
+- StorageSystemAdapter: added persist module
 
 ## [0.1.2]
 

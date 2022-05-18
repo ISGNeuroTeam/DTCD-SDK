@@ -89,4 +89,8 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   getDataSourceList() {
     return this.instance.getDataSourceList();
   }
+
+  oneShotRun(type, datasourceParameters) {
+    return this.instance.oneShotRun(type, datasourceParameters);
+  }
 }

@@ -14,4 +14,19 @@ export class VisualisationPanelPlugin extends PanelPlugin {
       'Implement the updateTheme method for updating style properties of this panel'
     );
   }
+
+  _getForm() {
+    return {
+      showBackground: true,
+      showTitle: true,
+      ...this._getFormSettings(),
+    };
+  }
+
+  _getFormSettings() {
+    return {};
+    // NEW TO OVERLOAD IN PANEL PLUGIN
+  }
+
+  setForm(config) {}
 }

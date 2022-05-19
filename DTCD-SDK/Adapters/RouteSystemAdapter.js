@@ -13,4 +13,8 @@ export class RouteSystemAdapter extends BaseAdapter {
   async navigate(path) {
     await this.instance.navigate(path);
   }
+
+  getRouteTitle() {
+    return this.instance.getRouteTitle();
+  }
 }

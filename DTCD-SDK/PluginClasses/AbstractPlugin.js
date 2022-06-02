@@ -159,7 +159,7 @@ export class AbstractPlugin {
    * Resets systems if they has resetSystem method
    * @method
    */
-  resetSystem() {
+  resetSystems() {
     return Application.resetSystems();
   }
 }

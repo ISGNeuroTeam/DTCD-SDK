@@ -154,4 +154,12 @@ export class AbstractPlugin {
   getGUIDList() {
     return Application.getGUIDList();
   }
+
+  /**
+   * Resets systems if they has resetSystem method
+   * @method
+   */
+  resetSystem() {
+    return Application.resetSystems();
+  }
 }

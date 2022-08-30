@@ -1,5 +1,6 @@
 export { BaseAdapter } from './Adapters/BaseAdapter';
 export { LogSystemAdapter } from './Adapters/LogSystemAdapter';
+export { NotificationSystemAdapter } from './Adapters/NotificationSystemAdapter';
 export { EventSystemAdapter } from './Adapters/EventSystemAdapter';
 export { InteractionSystemAdapter } from './Adapters/InteractionSystemAdapter';
 export { StorageSystemAdapter } from './Adapters/StorageSystemAdapter';

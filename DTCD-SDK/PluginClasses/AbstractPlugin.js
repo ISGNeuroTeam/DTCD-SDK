@@ -23,52 +23,28 @@ export class AbstractPlugin {
   }
 
   /**
-   * Getting module from dependencies
+   * Installing system
    * @method
    * @param {String} name
-   * @returns {Object[]}
-   */
-  getDependence(name) {
-    return Application.getDependence(name);
-  }
-
-  /**
-   * Getting all extensions for plugin by name
-   * @method
-   * @param {String} name
-   * @return {Object[]}
-   */
-  getExtensions(name) {
-    return Application.getExtensions(name);
-  }
-
-  /**
-   * Getting list of all awailable panels
-   * @method
-   * @return {Object[]}
-   */
-  getPanels() {
-    return Application.getPanels();
-  }
-
-  /**
-   * Getting system by name
-   * @method
-   * @param {String} name
-   * @return {Object}
-   */
-  getSystem(name) {
-    return Application.getSystem(name);
-  }
-
-  /**
-   * Installing plugin by name
-   * @method
-   * @param {String} name
+   * @param {String} version
+   * @param {String} guid
    * @return {Object} Returns instance of plugin
    */
-  installPlugin(name, ...args) {
-    return Application.installPlugin(name, ...args);
+  installSystem({ name, version, guid }) {
+    return Application.installSystem({ name, version, guid });
+  }
+
+  /**
+   * Installing panel
+   * @method
+   * @param {String} name
+   * @param {String} version
+   * @param {String} guid
+   * @param {String} selector
+   * @return {Object} Returns instance of plugin
+   */
+  installPanel({ name, version, guid, selector }) {
+    return Application.installPanel({ name, version, guid, selector });
   }
 
   /**
@@ -103,6 +79,50 @@ export class AbstractPlugin {
   }
 
   /**
+   * Getting module from dependencies
+   * @method
+   * @param {String} name
+   * @param {String} type
+   * @param {String} version
+   * @returns {Object[]}
+   */
+  getDependence(name, type, version) {
+    return Application.getDependence(name, type, version);
+  }
+
+  getPlugin(name, version) {
+    return Application.getPlugin(name, version);
+  }
+
+  /**
+   * Getting all extensions for plugin by name
+   * @method
+   * @param {String} name
+   * @return {Object[]}
+   */
+  getExtensions(name) {
+    return Application.getExtensions(name);
+  }
+
+  /**
+   * Getting list of all awailable panels
+   * @method
+   * @return {Object[]}
+   */
+  getPanels() {
+    return Application.getPanels();
+  }
+
+  /**
+   * Getting system by name
+   * @method
+   * @param {String} name
+   * @return {Object}
+   */
+  getSystem(name, version) {
+    return Application.getSystem(name, version);
+  }
+  /**
    * Getting instance by GUID
    * @method
    * @param {String} guid
@@ -110,6 +130,10 @@ export class AbstractPlugin {
    */
   getInstance(guid) {
     return Application.getInstance(guid);
+  }
+
+  findInstances(name, version) {
+    return Application.findInstances(name, version);
   }
 
   /**
@@ -131,7 +155,11 @@ export class AbstractPlugin {
     return Application.getGUIDList();
   }
 
-  getPlugin(name, type = false) {
-    return Application.getPlugin(name, type);
+  /**
+   * Resets systems if they has resetSystem method
+   * @method
+   */
+  resetSystems() {
+    return Application.resetSystems();
   }
 }

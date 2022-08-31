@@ -8,19 +8,10 @@ export class StorageSystemAdapter extends BaseAdapter {
   /**
    * Initialize StorageSystemAdapter instance.
    * @constructor
-   * @param {String} version version of system in adapter
    */
-  constructor(version) {
+  constructor() {
     super();
-    this.instance = this.getSystem('StorageSystem', version);
-  }
-
-  /**
-   * This method returns guid of system used in adapter
-   * @returns {String} guid of the instance
-   */
-  getGUID() {
-    return super.getGUID(this.instance);
+    this.instance = this.getSystem('StorageSystem');
   }
 
   /**
@@ -30,15 +21,6 @@ export class StorageSystemAdapter extends BaseAdapter {
    */
   get session() {
     return this.instance.session;
-  }
-
-  /**
-   * Persist module.
-   * @property @public
-   * @returns {PersistModule} PersistModule instance.
-   */
-  get persist() {
-    return this.instance.persist;
   }
 
   /**

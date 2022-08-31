@@ -4,19 +4,10 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   /**
    * Initialize WorkspaceSystemAdapter instance.
    * @constructor
-   * @param {String} version version of system in adapter
    */
-  constructor(version) {
+  constructor() {
     super();
-    this.instance = this.getSystem('WorkspaceSystem', version);
-  }
-
-  /**
-   * This method returns guid of system used in adapter
-   * @returns {String} guid of the instance
-   */
-  getGUID() {
-    return super.getGUID(this.instance);
+    this.instance = this.getSystem('WorkspaceSystem');
   }
 
   /**
@@ -147,8 +138,8 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
    * @method
    * @param {String} panelName name of panel plugin
    */
-  openPanelInModal(panelName, version) {
-    return this.instance.openPanelInModal(panelName, version);
+  openPanelInModal(panelName) {
+    return this.instance.openPanelInModal(panelName);
   }
 
   /**

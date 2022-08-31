@@ -8,19 +8,10 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   /**
    * Initialize DataSourceSystemAdapter instance.
    * @constructor
-   * @param {String} version version of system in adapter
    */
-  constructor(version) {
+  constructor() {
     super();
-    this.instance = this.getSystem('DataSourceSystem', version);
-  }
-
-  /**
-   * This method returns guid of system used in adapter
-   * @returns {String} guid of the instance
-   */
-  getGUID() {
-    return super.getGUID(this.instance);
+    this.instance = this.getSystem('DataSourceSystem');
   }
 
   /**
@@ -35,62 +26,30 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   /**
    * Create a datasource of a specific type.
    * @method @public
-   * @param {string} name DataSource name.
-   * @param {string} type DataSource type.
-   * @param {Object} datasourceParams parameters of datasource.
+   * @param {string} type DataSource type name.
    * @returns {Object} DataSource class instance.
    */
-  createDataSource(name, type, datasourceParams) {
-    return this.instance.createDataSource(name, type, datasourceParams);
+  createDataSource(type) {
+    return this.instance.createDataSource(type);
   }
 
-  /**
-   * Edits a specific datasource.
-   * @method @public
-   * @param {string} name DataSource name.
-   */
   editDataSource(name, params) {
     return this.instance.editDataSource(name, params);
   }
 
-  /**
-   * Execute a specific datasource.
-   * @method @public
-   * @param {string} name DataSource name.
-   */
   runDataSource(name) {
     return this.instance.runDataSource(name);
   }
 
-  /**
-   * Returns a specific datasource.
-   * @method @public
-   * @param {string} name DataSource name.
-   * @returns {Object} datasource.
-   */
   getDataSource(name) {
     return this.instance.getDataSource(name);
   }
 
-  /**
-   * Removes a datasource.
-   * @method @public
-   * @param {string} name DataSource name.
-   */
   removeDataSource(name) {
     return this.instance.removeDataSource(name);
   }
 
-  /**
-   * Returns an array of datasources.
-   * @method @public
-   * @returns {Array} array of datasources.
-   */
   getDataSourceList() {
     return this.instance.getDataSourceList();
-  }
-
-  oneShotRun(type, datasourceParameters) {
-    return this.instance.oneShotRun(type, datasourceParameters);
   }
 }

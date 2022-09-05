@@ -93,4 +93,19 @@ export class DataSourceSystemAdapter extends BaseAdapter {
   oneShotRun(type, datasourceParameters) {
     return this.instance.oneShotRun(type, datasourceParameters);
   }
+  get autorun() {
+    return this.instance.autorun;
+  }
+
+  set autorun(value) {
+    this.instance.autorun = value;
+  }
+
+  get runOnTokenChange() {
+    return this.instance.runOnTokenChange;
+  }
+
+  set runOnTokenChange(value) {
+    this.instance.runOnTokenChange = value;
+  }
 }

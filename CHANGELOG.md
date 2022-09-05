@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toggleSidebar()` method to AppGUISystem adapter
 - resizeObserver to panelPlugin
 - title to panelPlugin
+- added get\set "autorun", "runOnTokenChange" to DataSourceSystemAdapter
 
 ### Changed
 

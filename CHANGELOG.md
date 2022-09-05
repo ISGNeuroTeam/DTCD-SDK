@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - AppGUISystem adapter
 - Visualisation and App panel plugin classes
 - `toggleSidebar()` method to AppGUISystem adapter
+- resizeObserver to panelPlugin
+- title to panelPlugin
 
 ### Changed
 

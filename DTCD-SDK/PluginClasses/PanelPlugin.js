@@ -2,6 +2,24 @@ import { AbstractPlugin } from './AbstractPlugin';
 import { AbstractMethodImplementError } from './../Errors/AbstractClassErrors';
 
 export class PanelPlugin extends AbstractPlugin {
+  defaultConfig = {
+    title: '',
+  }
+
+  defaultFields = [
+    {
+      component: 'text',
+      propName: 'title',
+      attrs: {
+        label: 'Заголовок',
+      },
+    },
+  ]
+
+  resizeObserver = null
+
+  resizeObserverTarget = null
+
   constructor(guid, selector) {
     super();
     // const outerWrapper = document.getElementById(selector.slice(1));
@@ -20,4 +38,34 @@ export class PanelPlugin extends AbstractPlugin {
       'Implement the updateTheme method for updating style properties of this panel'
     );
   }
+
+  setResizeObserver(element, sizeSetter) {
+    if (this.resizeObserverTarget === null) {
+      this.resizeObserverTarget = element
+
+      this.resizeObserver = new ResizeObserver((entries) => {
+        const {height, width} = entries[0].contentRect
+        sizeSetter({
+          height,
+          width,
+        })
+      });
+
+      this.resizeObserver.observe(element);
+    } else {
+      throw new Error(`
+      ResizeObserver уже существует, чтобы задать новые параметры
+      сначала нужно удалить текущий
+      `)
+    }
+  }
+
+  removeResizeObserver() {
+    if (this.resizeObserver) {
+      this.resizeObserver.unobserve(this.resizeObserverTarget);
+      this.resizeObserverTarget = null;
+      this.resizeObserver = null;
+    }
+  }
+
 }

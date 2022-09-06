@@ -68,4 +68,9 @@ export class PanelPlugin extends AbstractPlugin {
     }
   }
 
+  /**
+   * This method will be executed when the panel changes its visible state (for example, the tab has changed).
+   * @param {boolean} isVisible
+   */
+  setVisible(isVisible) {}
 }

@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0]
+
+### Added
+
+- redirect feature to RouterSystemAdapter
+- NotificationSystem adapter
+- RouteSystem adapter
+- AppGUISystem adapter
+- Visualisation and App panel plugin classes
+- `toggleSidebar()` method to AppGUISystem adapter
+- resizeObserver to panelPlugin
+- title to panelPlugin
+- added the `beforeUninstall` method, which is called before removing plugins
+- added the `setVisible` method, which is called when the visibility of the panel changes
+- added get\set "autorun", "runOnTokenChange" to DataSourceSystemAdapter
+
+### Changed
+
+- refactored DataSource adapter for a new system API
+- StorageSystemAdapter: added persist module
+
 ## [0.1.2]
 
 ### Added

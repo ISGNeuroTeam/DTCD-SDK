@@ -3,14 +3,24 @@ import { BaseAdapter } from './BaseAdapter';
 export class LogSystemAdapter extends BaseAdapter {
   /**
    * @constructor
+   * @param {String} version version of system in adapter
    * @param {String} guid guid of plugin instance
    * @param {String} pluginName name of plugin
    */
-  constructor(guid, pluginName) {
+
+  constructor(version, guid, pluginName) {
     super();
-    this.instance = this.getSystem('LogSystem');
+    this.instance = this.getSystem('LogSystem', version);
     this.guid = guid;
     this.pluginName = pluginName;
+  }
+
+  /**
+   * This method returns guid of system used in adapter
+   * @returns {String} guid of the instance
+   */
+  getGUID() {
+    return super.getGUID(this.instance);
   }
 
   /**

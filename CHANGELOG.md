@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toggleSidebar()` method to AppGUISystem adapter
 - resizeObserver to panelPlugin
 - title to panelPlugin
+- added the `beforeUninstall` method, which is called before removing plugins
+- added the `setVisible` method, which is called when the visibility of the panel changes
 - added get\set "autorun", "runOnTokenChange" to DataSourceSystemAdapter
 
 ### Changed

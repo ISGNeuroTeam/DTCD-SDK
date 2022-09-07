@@ -162,4 +162,9 @@ export class AbstractPlugin {
   resetSystems() {
     return Application.resetSystems();
   }
+
+  /**
+   * This method will be executed before uninstall plugin.
+   */
+  beforeUninstall() {}
 }

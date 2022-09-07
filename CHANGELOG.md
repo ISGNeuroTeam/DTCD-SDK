@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- redirect feature to RouterSystemAdapter
 - NotificationSystem adapter
 - RouteSystem adapter
 - AppGUISystem adapter
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - title to panelPlugin
 - added the `beforeUninstall` method, which is called before removing plugins
 - added the `setVisible` method, which is called when the visibility of the panel changes
+- added get\set "autorun", "runOnTokenChange" to DataSourceSystemAdapter
 
 ### Changed
 

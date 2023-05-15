@@ -1,7 +1,7 @@
-export default class AbstractGraphElement {
-  #yFiles;
+export class AbstractGraphElement {
+  yFiles;
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.yFiles = yFiles.default;
   }
 }

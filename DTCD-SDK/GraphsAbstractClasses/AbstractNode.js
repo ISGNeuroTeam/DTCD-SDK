@@ -1,6 +1,6 @@
-import AbstractGraphElement from './AbstractGraphElement';
+import {AbstractGraphElement} from './AbstractGraphElement';
 
-export default class AbstractNode extends AbstractGraphElement{
+export class AbstractNode extends AbstractGraphElement{
   instance;
 
   constructor(yFiles) {

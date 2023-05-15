@@ -1,6 +1,6 @@
-import AbstractNode from './AbstractNode'
+import {AbstractNode} from './AbstractNode'
 
-export default class NodeWithDefaultLabel extends AbstractNode {
+export class NodeWithDefaultLabel extends AbstractNode {
 
   constructor(yFiles) {
     super(yFiles);

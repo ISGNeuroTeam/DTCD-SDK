@@ -34,6 +34,7 @@ build: $(COMPONENTS)
 	cp -r ./$(PROJECT_NAME)/DataSourceClasses ./build/$(PROJECT_NAME)
 	cp -r ./$(PROJECT_NAME)/Errors ./build/$(PROJECT_NAME)
 	cp -r ./$(PROJECT_NAME)/PluginClasses ./build/$(PROJECT_NAME)
+	cp -r ./$(PROJECT_NAME)/GraphsAbstractClasses ./build/$(PROJECT_NAME)
 	cp -r ./$(PROJECT_NAME)/utils ./build/$(PROJECT_NAME)
 	cp ./$(PROJECT_NAME)/index.js ./build/$(PROJECT_NAME)
 	cp README.md ./build/

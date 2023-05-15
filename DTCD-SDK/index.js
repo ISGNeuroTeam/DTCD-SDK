@@ -23,4 +23,6 @@ export { BaseDataset } from './DataSourceClasses/BaseDataset';
 export { BaseDataSourceContent } from './DataSourceClasses/BaseDataSourceContent';
 export { BaseExternalDataSource } from './DataSourceClasses/BaseExternalDataSource';
 
-export * from './GraphsAbstractClasses/index'
+export {AbstractGraphElement} from './GraphsAbstractClasses/AbstractGraphElement'
+export {AbstractNode} from './GraphsAbstractClasses/AbstractNode'
+export {NodeWithDefaultLabel} from './GraphsAbstractClasses/NodeWithDefaultLabel'

@@ -22,3 +22,7 @@ export { InProgressError } from './Errors/InProgressError';
 export { BaseDataset } from './DataSourceClasses/BaseDataset';
 export { BaseDataSourceContent } from './DataSourceClasses/BaseDataSourceContent';
 export { BaseExternalDataSource } from './DataSourceClasses/BaseExternalDataSource';
+
+export {AbstractGraphElement} from './GraphsAbstractClasses/AbstractGraphElement'
+export {AbstractNode} from './GraphsAbstractClasses/AbstractNode'
+export {NodeWithDefaultLabel} from './GraphsAbstractClasses/NodeWithDefaultLabel'

@@ -2,35 +2,25 @@
  * Function for formatting of number.
  * @param {Number} number Number to format.
  * @param {String} [targetLocale] Locale to format. Example: 'no', 'auto', 'ru-RU', etc. Default: locale from localStorage (key - 'settings.numberFormat').
+ * @param {Object} options The same options as in Number.toLocalString() method.
  * @returns {String} Formatted number or 'number' parameter.
  */
-function formatNumberToLocale(number, targetLocale, maximumFractionDigits) {
+function formatNumberToLocale(number, targetLocale, options = {}) {
   if (typeof number != 'number') return number;
 
-  if (!targetLocale) {
+  if (!targetLocale) 
     targetLocale = window.localStorage.getItem('settings.numberFormat') || 'no';
-  }
   
-  if (typeof maximumFractionDigits === 'number' && maximumFractionDigits > -1 && maximumFractionDigits < 11) {
-    number = truncNumber(number, maximumFractionDigits)
-  } else {
-    maximumFractionDigits = parseInt(window.localStorage.getItem('settings.signsAfterComma')) ?? -1;
-    number = maximumFractionDigits !== -1 ? truncNumber(number, maximumFractionDigits) : number;
-  }
+  options.maximumFractionDigits = options.maximumFractionDigits || parseInt(window.localStorage.getItem('settings.signsAfterComma') || 20);
 
-  if (targetLocale == 'no') return number;
+  if (targetLocale == 'no') 
+    return number.toLocaleString(undefined, {...options, useGrouping: false});
 
-  if (targetLocale == 'auto') {
+  if (targetLocale == 'auto') 
     return number.toLocaleString(undefined, options);
-  } else {
-    return number.toLocaleString(targetLocale, options);
-  }
+
+  return number.toLocaleString(targetLocale, options);
 };
-
-
-function truncNumber(number, maximumFractionDigits) {
-  return Math.trunc(number*Math.pow(10, maximumFractionDigits))/Math.pow(10, maximumFractionDigits)
-}
 
 export {
   formatNumberToLocale,

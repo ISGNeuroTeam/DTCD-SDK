@@ -1,6 +1,6 @@
 {
   "name": "sdk",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "SDK is a collection absctract classes and adapters needed for creating new plugin for WebGUI.",
   "main": "index.js",
   "dependencies": {},

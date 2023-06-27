@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.6.1]
 
+### Added
+
+- new method and jsdoc for RouteSystemAdapter
+
+## [0.6.1]
+
 ### Fized
 
 - erros in formatNumber method

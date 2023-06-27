@@ -10,11 +10,27 @@ export class RouteSystemAdapter extends BaseAdapter {
     this.instance = this.getSystem('RouteSystem', version);
   }
 
-  async navigate(path, isRedirect, data) {
-    await this.instance.navigate(path, isRedirect, data);
+  /**
+   *
+   * @param {String} path - path to go
+   * @param {*} replace - boolean flag to replace or not current state without pushing
+   */
+  async navigate(path, replace) {
+    await this.instance.navigate(path, replace);
   }
 
+  /**
+   * @returns {String} - current route title
+   */
   getRouteTitle() {
     return this.instance.getRouteTitle();
+  }
+
+  /**
+   *
+   * @param {String} path - path to go
+   */
+  async replace(path) {
+    await this.instance.replace(path);
   }
 }

@@ -90,8 +90,15 @@ export class AbstractPlugin {
     return Application.getDependence(name, type, version);
   }
 
-  getPlugin(name, version) {
-    return Application.getPlugin(name, version);
+  /**
+   * Getting specified plugin
+   * @param {*} name Plugin name
+   * @param {*} version Plugin version
+   * @param {*} octetCount Possible number of second octets higher than specified
+   * @returns {Object} Returns instance of plugin
+   */
+  getPlugin(name, version, octetCount) {
+    return Application.getPlugin(name, version, octetCount);
   }
 
   /**

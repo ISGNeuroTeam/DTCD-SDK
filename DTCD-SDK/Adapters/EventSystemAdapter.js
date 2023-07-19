@@ -113,6 +113,15 @@ export class EventSystemAdapter extends BaseAdapter {
   }
 
   /**
+   * Replaced custom action callback function
+   * @param {CustomAction | string} actionOrName
+   * @param {function} callback
+   */
+  editCustomAction(actionOrName, callback) {
+    this.#instance.editCustomAction(actionOrName, callback);
+  }
+
+  /**
    * Publishes event from instance by name
    * @method
    * @param {String} eventName event name

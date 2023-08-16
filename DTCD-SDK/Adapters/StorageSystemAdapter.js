@@ -33,12 +33,12 @@ export class StorageSystemAdapter extends BaseAdapter {
   }
 
   /**
-   * Persist module.
+   * Browser module.
    * @property @public
-   * @returns {PersistModule} PersistModule instance.
+   * @returns {BrowserModule} BrowserModule instance.
    */
-  get persist() {
-    return this.instance.persist;
+  get browser() {
+    return this.instance.browser;
   }
 
   /**

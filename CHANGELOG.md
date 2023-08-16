@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - getter of `browser` property in StorageSystemAdapter
+- method `setUsername()` to `LogSystemAdapter` class
+- method `uploadLogs()` to `LogSystemAdapter` class
 
 ### Removed
 

@@ -144,4 +144,20 @@ export class LogSystemAdapter extends BaseAdapter {
   resetConfiguration() {
     this.instance.resetConfiguration();
   }
+
+  /**
+   * Sets the username for logs based on app authorization
+   * @returns {String | null} - current username or null
+   */
+  async setUsername() {
+    return await this.instance.setUsername();
+  }
+
+  /**
+   * Uploads log buffer to server
+   * @returns {Promise} Logs upload request promise
+   */
+  uploadLogs() {
+    return this.instance.uploadLogs();
+  }
 }

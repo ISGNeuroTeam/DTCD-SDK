@@ -20,6 +20,13 @@ export class WorkspaceSystemAdapter extends BaseAdapter {
   }
 
   /**
+   * @returns {Array<string>} Array of GUIDs of widgets (panels on workspace).
+   */
+  getGUIDListOfWidgets() {
+    return this.instance.getGUIDListOfWidgets();
+  }
+
+  /**
    * Setting new workspace state from config
    * @method
    * @returns {Boolean} true, if everything is ok

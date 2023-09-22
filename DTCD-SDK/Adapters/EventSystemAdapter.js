@@ -135,28 +135,27 @@ export class EventSystemAdapter extends BaseAdapter {
   /**
    * Subscribing
    * @method
-   * @param {String} eventGUID instance guid of firing plugin
-   * @param {String} eventName name of event
-   * @param {String} actionsGUID instance guid of plugin whom invoke callback
-   * @param {String} actionName name of action
+   * @param {String} subscriptionData.eventGUID instance guid of firing plugin
+   * @param {String} subscriptionData.eventName name of event
+   * @param {String} subscriptionData.actionsGUID instance guid of plugin whom invoke callback
+   * @param {String} subscriptionData.actionName name of action
+   * @param {String} [subscriptionData.subscriptionID] ID of subscription
+   * @param {String} [subscriptionData.subscriptionName] name of subscription
+   * @param {String} [subscriptionData.subscriptionType] type of subscription. For example, 'system'
    * @param {Array} args arguments of event
-   * @returns {Boolean} true, if everything is ok
+   * @returns {string} subscription ID, if everything is ok
    */
-  subscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
-    return this.#instance.subscribe(eventGUID, eventName, actionGUID, actionName, ...args);
+  subscribe(subscriptionData, ...args) {
+    return this.#instance.subscribe(subscriptionData, ...args);
   }
 
   /**
    * Unsubscribing
    * @method
-   * @param {String} eventGUID instance guid of firing plugin
-   * @param {String} eventName name of event
-   * @param {String} actionsGUID instance guid of plugin whom invoke callback
-   * @param {String} actionName name of action
-   * @param {Array} args arguments of event
+   * @param {String} subscriptionID ID of subscription
    * @returns {Boolean} true, if everything is ok
    */
-  unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args) {
-    return this.#instance.unsubscribe(eventGUID, eventName, actionGUID, actionName, ...args);
+  unsubscribe(subscriptionID, ...args) {
+    return this.#instance.unsubscribe(subscriptionID, ...args);
   }
 }

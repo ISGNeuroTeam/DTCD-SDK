@@ -91,10 +91,22 @@ export class AbstractPlugin {
   }
 
   /**
+   * Add new dependence
+   * @method
+   * @param {String} name Dependence name
+   * @param {String} type Dependence type
+   * @param {String} version Dependence version
+   * @param {*} moduleOrPath Path to dependence location (as string) or dependence data
+   */
+  async installDependence(name, type, version, moduleOrPath) {
+    await Application.installDependence(name, type, version, moduleOrPath);
+  }
+
+  /**
    * Getting specified plugin
-   * @param {*} name Plugin name
-   * @param {*} version Plugin version
-   * @param {*} octetCount Possible number of second octets higher than specified
+   * @param {String} name Plugin name
+   * @param {String} version Plugin version
+   * @param {Number} octetCount Possible number of second octets higher than specified or less than 0 to get latest version
    * @returns {Object} Returns instance of plugin
    */
   getPlugin(name, version, octetCount) {

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+### Added
+
+- method `installDependence()` to `AbstractPlugin` class
+
 ### Changed
 
 - parameters of 'subcribe' and 'unsubcribe' methods

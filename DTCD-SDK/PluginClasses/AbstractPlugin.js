@@ -91,6 +91,18 @@ export class AbstractPlugin {
   }
 
   /**
+   * Add new dependence
+   * @method
+   * @param {String} name Dependence name
+   * @param {String} type Dependence type
+   * @param {String} version Dependence version
+   * @param {*} moduleOrPath Path to dependence location (as string) or dependence data
+   */
+  async installDependence(name, type, version, moduleOrPath) {
+    await Application.installDependence(name, type, version, moduleOrPath);
+  }
+
+  /**
    * Getting specified plugin
    * @param {*} name Plugin name
    * @param {*} version Plugin version

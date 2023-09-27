@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - parameters of 'subcribe' and 'unsubcribe' methods
 - some little GraphsAbstractClasses code improvements
+- JSDoc of `AbstractPlugin.getPlugin()` method
 
 ## [0.11.0]
 

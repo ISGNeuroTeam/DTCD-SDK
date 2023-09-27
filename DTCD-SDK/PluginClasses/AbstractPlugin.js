@@ -104,9 +104,9 @@ export class AbstractPlugin {
 
   /**
    * Getting specified plugin
-   * @param {*} name Plugin name
-   * @param {*} version Plugin version
-   * @param {*} octetCount Possible number of second octets higher than specified
+   * @param {String} name Plugin name
+   * @param {String} version Plugin version
+   * @param {Number} octetCount Possible number of second octets higher than specified or less than 0 to get latest version
    * @returns {Object} Returns instance of plugin
    */
   getPlugin(name, version, octetCount) {
